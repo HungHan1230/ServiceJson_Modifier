@@ -1,0 +1,138 @@
+{
+    "api": {
+        "ipfsproxy": {
+            "idle_timeout": "1m0s",
+            "listen_multiaddress": "/ip4/127.0.0.1/tcp/9095",
+            "log_file": "",
+            "max_header_bytes": 4096,
+            "node_multiaddress": "/ip4/127.0.0.1/tcp/5001",
+            "read_header_timeout": "5s",
+            "read_timeout": "0s",
+            "write_timeout": "0s"
+        },
+        "restapi": {
+            "basic_auth_credentials": null,
+            "cors_allow_credentials": true,
+            "cors_allowed_headers": [],
+            "cors_allowed_methods": [
+                "GET"
+            ],
+            "cors_allowed_origins": [
+                "*"
+            ],
+            "cors_exposed_headers": [
+                "Content-Type",
+                "X-Stream-Output",
+                "X-Chunked-Output",
+                "X-Content-Length"
+            ],
+            "cors_max_age": "0s",
+            "headers": {},
+            "http_listen_multiaddress": "/ip4/127.0.0.1/tcp/9094",
+            "http_log_file": "",
+            "idle_timeout": "2m0s",
+            "max_header_bytes": 4096,
+            "read_header_timeout": "5s",
+            "read_timeout": "0s",
+            "write_timeout": "0s"
+        }
+    },
+    "cluster": {
+        "connection_manager": {
+            "grace_period": "2m0s",
+            "high_water": 400,
+            "low_water": 100
+        },
+        "disable_repinning": false,
+        "enable_relay_hop": true,
+        "leave_on_shutdown": false,
+        "listen_multiaddress": [
+            "/ip4/0.0.0.0/tcp/9096",
+            "/ip4/0.0.0.0/udp/9096/quic"
+        ],
+        "mdns_interval": "10s",
+        "monitor_ping_interval": "15s",
+        "peer_addresses": [],
+        "peer_watch_interval": "5s",
+        "peername": "hank",
+        "pin_recover_interval": "12m0s",
+        "replication_factor_max": -1,
+        "replication_factor_min": -1,
+        "secret": "2123321adsfa",
+        "state_sync_interval": "5m0s"
+    },
+    "consensus": {
+        "crdt": {
+            "cluster_name": "ipfs-cluster",
+            "trusted_peers": [
+                "*"
+            ]
+        }
+    },
+    "datastore": {
+        "badger": {
+            "badger_options": {
+                "compact_l_0_on_close": false,
+                "dir": "",
+                "level_one_size": 268435456,
+                "level_size_multiplier": 10,
+                "max_levels": 7,
+                "max_table_size": 67108864,
+                "num_compactors": 2,
+                "num_level_zero_tables": 5,
+                "num_level_zero_tables_stall": 10,
+                "num_memtables": 5,
+                "num_versions_to_keep": 1,
+                "read_only": false,
+                "sync_writes": true,
+                "table_loading_mode": 2,
+                "truncate": false,
+                "value_dir": "",
+                "value_log_file_size": 1073741823,
+                "value_log_loading_mode": 2,
+                "value_log_max_entries": 1000000,
+                "value_threshold": 32
+            }
+        }
+    },
+    "informer": {
+        "disk": {
+            "metric_ttl": "30s",
+            "metric_type": "freespace"
+        }
+    },
+    "ipfs_connector": {
+        "ipfshttp": {
+            "connect_swarms_delay": "30s",
+            "ipfs_request_timeout": "5m0s",
+            "node_multiaddress": "/ip4/127.0.0.1/tcp/5001",
+            "pin_timeout": "24h0m0s",
+            "repogc_timeout": "24h0m0s",
+            "unpin_timeout": "3h0m0s"
+        }
+    },
+    "monitor": {
+        "pubsubmon": {
+            "check_interval": "15s",
+            "failure_threshold": 3
+        }
+    },
+    "observations": {
+        "metrics": {
+            "enable_stats": false,
+            "prometheus_endpoint": "/ip4/127.0.0.1/tcp/8888",
+            "reporting_interval": "2s"
+        },
+        "tracing": {
+            "enable_tracing": false,
+            "jaeger_agent_endpoint": "/ip4/0.0.0.0/udp/6831",
+            "sampling_prob": 0.3,
+            "service_name": "cluster-daemon"
+        }
+    },
+    "pin_tracker": {
+        "stateless": {
+            "concurrent_pins": 10
+        }
+    }
+}
